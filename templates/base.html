@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    form div {
+    display: flex;
+    flex-direction: column;  /* Change to 'row' if you want the label to the left of the textarea */
+    align-items: flex-start; /* Aligns items to the left */
+}
+
+form label {
+    margin-bottom: 0.5em; /* Adjust the space between the label and the textarea */
+}
+
+.textarea {
+    width: 100%;
+    height: 150px; /* Or any other height */
+}
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Django App{% endblock %}</title>
+
+    <!-- Bootswatch CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">My Todo List</a>
+        <div class="ml-auto">
+{#            {% if user.is_authenticated %}#}
+{#                <a href="{% url 'logout' %}" class="btn btn-secondary">Logout</a>#}
+{#            {% else %}#}
+{#                <a href="{% url 'login' %}" class="btn btn-secondary mr-2">Login</a>#}
+{#                <a href="{% url 'register' %}" class="btn btn-secondary">Register</a>#}
+{#            {% endif %}#}
+        </div>
+    </div>
+</nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+
+</body>
+
+</html>
