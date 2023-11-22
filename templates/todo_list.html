@@ -3,16 +3,40 @@
 {% block content %}
 
     <h2>Todo List</h2>
-    <u1>
+
+{#    create button #}
+    <a href="{% url 'todo_create' %}" class="btn btn-success">Create Todo</a>
+    <hr>
+
+{#    list of todos in table format #}
+    <table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Date Created</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Completed</th>
+            <th>Due Date</th>
+        </tr>
+    </thead>
+    <tbody>
         {% for todo in todos %}
-            <li>
-                {{ todo.title }} - {{ todo.description }}
-                <a href="{% url 'todo_update' todo.id %}">Edit</a> |
-                <a href="{% url 'todo_delete' todo.id %}">Delete</a>
-            </li>
-        {% empty %}
-            <li>No todos yet.</li>
+        <tr>
+            <td>{{ todo.created_date }}</td>
+            <td>{{ todo.title }}</td>
+            <td>{{ todo.description }}</td>
+            <td>{{ todo.completed }}</td>
+            <td>{{ todo.due_date }}</td>
+            <td>
+                <a href="{% url 'todo_update' todo.id %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'todo_delete' todo.id %}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+         {% empty %}
+        <tr><td colspan="4">No todos yet.</td></tr>
         {% endfor %}
-    </u1>
-    <a href="{% url 'todo_create' %}">Create Todo</a>
+    </tbody>
+    </table>
+
+
 {% endblock %}
