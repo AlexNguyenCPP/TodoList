@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from .models import Todo
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
 
 
@@ -30,3 +31,8 @@ class TodoDeleteView(DeleteView):
     model = Todo
     template_name = 'todo_confirm_delete.html'
     success_url = reverse_lazy('todo_list')
+
+class TodoDetailView(DetailView):
+    model = Todo
+    template_name = 'todo_detail.html'
+    context_object_name = 'todo'

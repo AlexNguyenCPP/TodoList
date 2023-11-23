@@ -3,6 +3,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+.table-wrap {
+    overflow-x: auto; /* Enables horizontal scrolling if table overflows */
+}
+.table td, .table th {
+    white-space: nowrap; /* Ensures the content of the table cells does not wrap */
+    max-width: 200px; /* Sets a maximum width for the cells */
+    overflow: hidden; /* Hides any content that overflows the cell's box */
+    text-overflow: ellipsis; /* Adds an ellipsis to any text that overflows */
+}
+</style>
 
     <h2>Todo List</h2>
 
@@ -31,6 +42,7 @@
             <td>{{ todo.due_date }}</td>
             <td>
                 <a href="{% url 'todo_update' todo.id %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'todo_detail' todo.id %}" class="btn btn-secondary">Detail</a>
                 <a href="{% url 'todo_delete' todo.id %}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
