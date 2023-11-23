@@ -34,7 +34,7 @@ form label {
         <div class="ml-auto">
          {% if user.is_authenticated %}
               <a href="{% url 'logout' %}" class="btn btn-secondary">Logout</a>
-             {% else %}#}
+             {% else %}
                <a href="{% url 'login' %}" class="btn btn-secondary mr-2">Login</a>
                <a href="{% url 'register' %}" class="btn btn-secondary">Register</a>
              {% endif %}
