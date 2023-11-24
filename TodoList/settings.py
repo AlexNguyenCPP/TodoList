@@ -78,18 +78,21 @@ WSGI_APPLICATION = 'TodoList.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'todoprojectdb',
-        'USER': 'alexnguyen1994',
-        'PASSWORD': 'Sharks714!',
-        'HOST': 'localhost',
-        'PORT' : '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
-
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'da5qqaoa1m8tec',
+        'USER': 'sycwklihkhldgt',
+        'PASSWORD': '8cbe0d671dbb8751d0a0a5497b6eea2402e206380b15dda56bdd9f542108f1fc',
+        'HOST': 'ec2-44-213-228-107.compute-1.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
