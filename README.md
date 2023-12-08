@@ -1,3 +1,7 @@
+Alex Nguyen
+Jair De Orta
+Krystal Phan
+
 Website link: https://todolistproj-0226060662b2.herokuapp.com/accounts/login/?redirect_to=/
 
 We recommend using the website link to run the project. 
